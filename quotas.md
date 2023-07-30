@@ -1,4 +1,4 @@
-# Respirce Quota
+# Resource Quota
 
 ```yaml
 apiVersion: v1
