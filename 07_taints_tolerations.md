@@ -1,4 +1,5 @@
 # Taints & tolerations
+Placing PODs with tolerations on the tainted nodes.
 
 Tainting a node:
 ```console
@@ -33,3 +34,5 @@ spec:
 ```
 
 > Double quotes in _tolerations_ section are mandatory!
+
+Taints & tolerations does NOT guarantee that the pods will ONLY prefer these tainted nodes! So sometimes combindation of taint/tolerations & Node Affinity is required.

@@ -35,3 +35,16 @@ target:
 ```console
 curl --header "Content-Type: application/json" --request POST --data '{"apiVersion": "v1", "kind": "Binding", "metadata": { "name": "nginx" }, "target": { "apiVersion": "v1", "kind": "Node", "name": "worker01" }}' http://localhost:8080/api/v1/namespaces/default/pods/nginx/binding
 ```
+## Editing a POD
+Remember, you CANNOT edit specifications of an existing POD other than the below:
+
+* spec.containers[*].image
+
+* spec.initContainers[*].image
+
+* spec.activeDeadlineSeconds
+
+* spec.tolerations
+
+For example you cannot edit the environment variables, service accounts, resource limits (all of which we will discuss later) of a running pod.
+To edit other things you need to edit deployment instead of specific POD.
