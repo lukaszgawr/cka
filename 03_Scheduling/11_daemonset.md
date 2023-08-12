@@ -20,4 +20,4 @@ spec:
 ```
 
 ## Fast creating manifest of daemonset
-[Link](../01_Introduction/00_exam_shortcuts.md)
+[Link](../01_Introduction/00_exam_shortcuts.md#create-daemonset)
