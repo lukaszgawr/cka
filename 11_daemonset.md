@@ -2,7 +2,7 @@
 
 ```yaml
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: DaemonSet
 metadata:
   name: monitoring-daemon
 spec:
