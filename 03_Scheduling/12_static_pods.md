@@ -9,4 +9,4 @@ Put yaml manifests in /etc/kubernetes/manifests (this is configurable) on k8s no
 node name is automatically appended to the podname
 
 ## Static PODs vs DaemonSets
-![Static PODs vs Daemonsets](images/12_static_pods_vs_daemonsets.png)
+![Static PODs vs Daemonsets](../images/12_static_pods_vs_daemonsets.png)

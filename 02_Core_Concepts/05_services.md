@@ -18,9 +18,10 @@ spec:
     type: frontend
 ```
 
-port - port w serwisie  
-targetPort - port w podzie  
-nodePort - port na worker nodzie  
+Porty:
+* _port_ - port w serwisie  
+* _targetPort_ - port w podzie  
+* _nodePort_ - port na worker nodzie  
 
 dla type:ClusterIP nie ma tylko nodePort a reszta tak samo
 

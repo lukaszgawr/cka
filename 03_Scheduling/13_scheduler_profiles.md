@@ -37,10 +37,10 @@ description: "This priority class should be used for XYZ service pods only."
 4. **Binding** - final binding pod to node
 
 ## Scheduling Plugins
-![Scheduling Plugins](images/13_scheduling_plugins.png)
+![Scheduling Plugins](../images/13_scheduling_plugins.png)
 
 ## Extension Points
-![Extensions Plugins](images/13_extension_plugins.png)
+![Extensions Plugins](../images/13_extension_plugins.png)
 
 ## Configuring scheduler profiles
-![Scheduler profiles](images/13_scheduler_profiles.png)
+![Scheduler profiles](../images/13_scheduler_profiles.png)

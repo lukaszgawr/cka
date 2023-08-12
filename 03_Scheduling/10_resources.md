@@ -35,10 +35,10 @@ If POD exceeds cpu k8s will throttle it.
 If POD exceeds memory it will terminate and give OOM error
 
 ## Behavior - CPU
-![Behavior - CPU](./images/10_behavior-cpu.png)
+![Behavior - CPU](../images/10_behavior-cpu.png)
 
 ## Behavior - Memory
-![Behavior - Memory](./images/10_behavior-memory.png)
+![Behavior - Memory](../images/10_behavior-memory.png)
 
 ## Default resources values - LimitRange!
 

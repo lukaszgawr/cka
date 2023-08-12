@@ -18,3 +18,6 @@ spec:
       - name: monitoring-agent
         image: monitoring-agent
 ```
+
+## Fast creating manifest of daemonset
+[Link](../01_Introduction/00_exam_shortcuts.md)
