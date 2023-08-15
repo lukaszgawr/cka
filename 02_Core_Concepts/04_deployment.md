@@ -29,3 +29,8 @@ spec:
 ```console
 kubectl create deployment --image=nginx [dry-run=client] [--replicas=6] myapp-deployment [-o yaml]
 ```
+
+To set image imperatively:
+```
+kubectl set image deployment/myapp container-name=container-image:version
+```

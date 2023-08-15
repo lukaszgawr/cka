@@ -48,20 +48,3 @@ Remember, you CANNOT edit specifications of an existing POD other than the below
 
 For example you cannot edit the environment variables, service accounts, resource limits (all of which we will discuss later) of a running pod.
 To edit other things you need to edit deployment instead of specific POD.
-
-# Running commands
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  labels:
-    run: static-busybox
-  name: static-busybox
-spec:
-  containers:
-  - image: busybox
-    name: static-busybox
-    command: ["/bin/sh"]
-    args: ["-c", "while true; do echo hello; sleep 10;done"]
-    resources: {}
-```
