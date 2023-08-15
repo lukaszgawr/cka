@@ -5,9 +5,11 @@ If there was only 1 replica of the pod and node (which hosts that pod) goes down
 ## Drain & cordon
 Pods are gracefully terminated from the node and recreated on another node.
 ```
-kubectl drain node-1
+kubectl drain node-1 [--ignore-daemonsets]
 ```
 When drained, node is also cordoned (made unschedulable).
+
+> If a single pod (without replicaset) resides on a node you cannot drain it!! At lease without --force flag. If you force and drain, the pod will be lost forever!!
 
 After node comes back you need to uncordon it:
 ```

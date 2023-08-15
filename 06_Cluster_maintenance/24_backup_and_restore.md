@@ -22,16 +22,25 @@ to check the status:
 #### Restore from snapshot
 
 1. Stop kube-apiserver:
-```service kube-apiserver stop```
+```service kube-apiserver stop``` - not necesarily
 2. Restore snapshot:
 ```ETCDCTL_API=3 etcdctl snapshot restore snapshot.db --data-dir /var/lib/etcd-from-backup ```
-3. Change --data-dir in etcd service to --data-dir=/var/lib/etcd-from-backup
+3. Change --data-dir in etcd service to --data-dir=/var/lib/etcd-from-backup OR change the volume's hostPath
 4. ```systemctl daemon-reload```
 5. ```service etcd restart```
 6. ```service kube-apiserver start```
 
 > You might also need to pass to etcdctl the following arguments: 
-> * --endpoints - to point to etcd server, default is 127.0.0.1:2379
+> * --endpoints - to point to etcd server, default is 127.0.0.1:2379 so _--endpoints=https://[127.0.0.1]:2379_
 > * --cacert
 > * --cert
 > * --key
+
+Example:
+```
+ ETCDCTL_API=3 etcdctl --endpoints=https://[127.0.0.1]:2379 \
+  --cacert=/etc/kubernetes/pki/etcd/ca.crt \
+  --cert=/etc/kubernetes/pki/etcd/server.crt \
+  --key=/etc/kubernetes/pki/etcd/server.key \
+  snapshot save /opt/snapshot-pre-boot.db
+```
