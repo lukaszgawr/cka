@@ -17,7 +17,7 @@ E.g. --data-dir=/var/lib/etcd - just save the content
 ```ETCDCTL_API=3 etcdctl snapshot save snapshot.db```   
 
 to check the status:
-``` ETCDCTL_API=4 etcdctl snapshot status snapshot.db```
+``` ETCDCTL_API=3 etcdctl snapshot status snapshot.db```
 
 #### Restore from snapshot
 
