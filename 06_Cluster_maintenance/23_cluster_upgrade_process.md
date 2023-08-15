@@ -1,0 +1,19 @@
+# Cluster upgrade process
+
+Only one major version at a time. First masters, then workers.
+
+## Upgrading master nodes
+1. ```apt-get upgrade -y kubeadm=1.12.0-00```
+2. ```kubeadm upgrade plan```
+3. ```kubeadm upgrade apply v1.12.0```
+4. Upgrade kubelet (if kubelet is present on master node): ```apt-get upgrade -y kubelet=1.12.0-00```
+5. ```systemctl restart kubelet```
+
+## Upgrading worker nodes
+Upgrade one at the time.
+1. Drain the node: ```kubectl drain node-1```, ssh to node
+2. ```apt-get upgrade -y kubeadm=1.12.0-00```
+3. ```apt-get upgrade -y kubelet=1.12.0-00```
+4. ```kubeadm upgrade node config --kubelet-version v1.12.0```
+5. ```systemctl restart kubelet```
+6. ```kubectl uncordon node-1```
