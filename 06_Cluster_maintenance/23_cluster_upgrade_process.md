@@ -43,3 +43,6 @@ After upgrading hold again:
 apt-mark hold <package>
 ```
 
+## Inspecting service logs
+If k8s is set up "the hard way" (with systemd services) we can view the logs with:
+``` journalctl -u etcd.service -l ```
