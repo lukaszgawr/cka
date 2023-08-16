@@ -20,12 +20,14 @@ spec:
   - server auth
   request:
     <base64 encoded csr >
-```
-
-
+```  
 
 ## Review Requests
 
+``` kubectl get csr ```
+
 ## Approve Requests
+
+``` kubectl certificate approve jane ```
 
 ## Share Certs to Users
