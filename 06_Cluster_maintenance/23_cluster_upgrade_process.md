@@ -47,4 +47,6 @@ apt-mark hold <package>
 If k8s is set up "the hard way" (with systemd services) we can view the logs with:
 ``` journalctl -u etcd.service -l ```  
 
-If k8s was setup with kubeadm view the logs with ```kubectl logs etcd-master -n kube-system```
+If k8s was setup with kubeadm view the logs with ```kubectl logs etcd-master -n kube-system```  
+
+If kube-apiserver/etcd server is down you need to go one level down - ssh to node and do ``` docker ps -a ``` and then ``` docker logs <container_id> ```
