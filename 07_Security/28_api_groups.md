@@ -6,7 +6,10 @@ API Groups:
 * /version
 * /api - core (legacy) group - group is found at REST path /api/v1. The core group is not specified as part of the apiVersion field, for example, apiVersion: v1.
 * /apis - named groups - are at REST path /apis/$GROUP_NAME/$VERSION and use apiVersion: $GROUP_NAME/$VERSION (for example, apiVersion: batch/v1)
-* /logs  
+* /logs
+
+To view API groups:
+``` curl http://localhost:6443 -k ```
 
 We'll focus on /api and /apis  
 
