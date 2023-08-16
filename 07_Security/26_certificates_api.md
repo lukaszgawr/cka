@@ -34,3 +34,7 @@ spec:
 ``` kubectl certificate approve jane ```
 
 ## Share Certs to Users
+
+View the cert with:  
+``` kubectl get csr jane -o yaml ```  
+Copy cert from the _certificate_ section and share with user.
