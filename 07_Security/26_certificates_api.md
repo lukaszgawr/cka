@@ -1,5 +1,8 @@
 # Certificates API
 
+All certificate related stuff is handled by kube-controller-manager. It has controllers: CSR-APPROVING & CSR_SIGNING.  
+CA that will be used for signing is configurable by _--cluster-signing-cert-file_ and _--cluster-signing-key-file_ in kube-controller-manager.
+
 ## Create CSR
 
 ``` openssl genrsa -out jane.key 2048 ```  
