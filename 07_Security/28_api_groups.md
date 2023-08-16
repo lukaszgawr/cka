@@ -8,8 +8,9 @@ API Groups:
 * /apis - named groups - are at REST path /apis/$GROUP_NAME/$VERSION and use apiVersion: $GROUP_NAME/$VERSION (for example, apiVersion: batch/v1)
 * /logs
 
-To view API groups:
-``` curl http://localhost:6443 -k ```
+To view API groups:  
+``` curl http://localhost:6443 -k ```  
+``` curl http://localhost:6443/apis -k ```
 
 We'll focus on /api and /apis  
 
