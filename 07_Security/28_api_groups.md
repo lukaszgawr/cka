@@ -10,6 +10,10 @@ API Groups:
 
 We'll focus on /api and /apis  
 
+## Kubernetes API reference
+
+[Link](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.27/)
+
 ## Core group (/api)
 ![core apis](../images/28_core_apis.png)
 
