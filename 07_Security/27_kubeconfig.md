@@ -41,3 +41,6 @@ users:
     client-certificate: admin.crt
     client-key: admin.key
 ```
+
+### Viewing kubeconfig
+``` kubectl config view ```
