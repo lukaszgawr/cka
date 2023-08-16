@@ -2,6 +2,12 @@
 
 ## Auth mechanisms
 
+Available mechanisms:
+* Basic (static pw file & token file)
+* Certificates (TLS)
+* Identity services like LDAP, Kerberos, etc.
+
+
 ### Basic - static password file
 
 > Deprecated in k8s v1.19
