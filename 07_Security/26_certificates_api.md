@@ -2,8 +2,8 @@
 
 ## Create CSR
 
-``` openssl genrsa -out jane.key 2048 ```
-``` openssl req -new -key jane.key -subj "/CN=jane" -out jane.csr ```
+``` openssl genrsa -out jane.key 2048 ```  
+``` openssl req -new -key jane.key -subj "/CN=jane" -out jane.csr ```  
 ``` cat jane.csr | base64 | tr -d "\n" ```  
 Now make jane-csr.yaml with pasted base64-encoded CSR:
 ``` yaml
