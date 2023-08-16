@@ -33,6 +33,7 @@ contexts:
   context:
     cluster: my-kube-playground
     user: my-kube-admin
+    namespace: finance
 
 users:
 
