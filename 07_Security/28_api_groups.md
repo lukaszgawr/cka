@@ -10,7 +10,8 @@ API Groups:
 
 To view API groups:  
 ``` curl http://localhost:6443 -k ```  
-``` curl http://localhost:6443/apis -k ```
+``` curl http://localhost:6443/apis -k ```  
+(you may have to add --key, --cert, --cacert for authentication)
 
 We'll focus on /api and /apis  
 
