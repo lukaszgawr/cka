@@ -24,3 +24,8 @@ We'll focus on /api and /apis
 
 ## Named group (/apis)
 ![core apis](../images/28_named_apis.png)
+
+## kubectl proxy
+
+```kubectl proxy ```  - it will make a proxy to kube-api-server
+After that you can do from your local machine: ``` curl http://localhost:8001 -k ```
