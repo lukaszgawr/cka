@@ -19,6 +19,7 @@ It has 3 sections:
 ```yaml
 apiVersion: v1
 kind: Config
+current-context: my-kube-admin@my-kube-playground
 clusters:
 
 - name: my-kube-playground
