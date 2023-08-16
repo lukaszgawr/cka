@@ -42,6 +42,7 @@ users:
     client-certificate: admin.crt
     client-key: admin.key
 ```
+_certificate-authority_ can be replaced with _certificate-authority-data_ and in this case cert should be pasted in the manifest (base64 encoded).
 
 ### Viewing kubeconfig
 ``` kubectl config view ```
