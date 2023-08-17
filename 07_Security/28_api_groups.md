@@ -29,3 +29,14 @@ We'll focus on /api and /apis
 
 ```kubectl proxy```  - it will make a proxy to kube-api-server, by default on 8001 port.  
 After that you can do from your local machine: ``` curl http://localhost:8001 -k ```
+
+
+## Namespaced Resources
+
+Pods, replicasets, jobs, deployments, services, secrets, roles, rolebindings, configmaps, PVC, etc.  
+Listing namespaced resources: ```kubectl api-resources --namespaced=true```
+
+## Cluster scoped resources
+
+Nodes, PV, clusterroles, clusterrolebindings, certificatesigningrequests, namespaces, etc.  
+Listing cluster-scoped resources: ```kubectl api-resources --namespaced=false```
