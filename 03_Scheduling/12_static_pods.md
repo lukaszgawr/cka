@@ -16,6 +16,10 @@ SSH to k8s node and run:
 ```
 crictl ps
 ```
+To check the logs:
+```
+crictl logs container-id
+```
 
 ## Static PODs vs DaemonSets
 ![Static PODs vs Daemonsets](../images/12_static_pods_vs_daemonsets.png)
