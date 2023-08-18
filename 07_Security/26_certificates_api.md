@@ -7,7 +7,7 @@ CA that will be used for signing is configurable by _--cluster-signing-cert-file
 
 ``` openssl genrsa -out jane.key 2048 ```  
 ``` openssl req -new -key jane.key -subj "/CN=jane" -out jane.csr ```  
-``` cat jane.csr | base64 | tr -d "\n" ```  
+``` cat jane.csr | base64 | tr -d "\n" ```  or ``` cat jane.csr | base64 -w 0 ```  
 Now make jane-csr.yaml with pasted base64-encoded CSR:
 ``` yaml
 apiVersion: certificates.k8s.io/v1
@@ -16,12 +16,8 @@ metadata:
   name: jane
 spec:
   signerName: kubernetes.io/kube-apiserver-client
-  groups:
-  - system:authenticated
   usages:
-  - digital signature
-  - key encipherment
-  - server auth
+  - client-auth
   request:
     <base64 encoded csr >
 ```  
