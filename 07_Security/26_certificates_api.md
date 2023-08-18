@@ -10,11 +10,12 @@ CA that will be used for signing is configurable by _--cluster-signing-cert-file
 ``` cat jane.csr | base64 | tr -d "\n" ```  
 Now make jane-csr.yaml with pasted base64-encoded CSR:
 ``` yaml
-apiVersion: certificates.k8s.io/v1beta1
+apiVersion: certificates.k8s.io/v1
 kind: CertificateSigningRequest
 metadata:
   name: jane
 spec:
+  signerName: kubernetes.io/kube-apiserver-client
   groups:
   - system:authenticated
   usages:
