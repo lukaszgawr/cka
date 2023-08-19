@@ -15,3 +15,6 @@ You don't have to create PV manually anymore!
 
 ![Storage classes](../images/40_storage_classes.png)
 ![Storage classes2](../images/40_storage_classes2.png)
+
+## VolumeBindingMode
+If storage class has VolumeBindingMode = _WaitForFirstConsumer_ it delays binding and provisioning of a Persistent Volume until pod using the PVC is created.
