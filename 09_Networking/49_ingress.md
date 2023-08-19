@@ -1,6 +1,6 @@
 # Ingress
 
-If on-prem then proxy-server can be used that points to NodePort service:
+If on-prem then proxy-server can be used that points to NodePort service (because NodePort can listen only on high ports):
 ![proxy](../images/49_proxy.png)
 ![ingress](../images/49_ingress.png)
 ![ingress_controller](../images/49_ingress_controller.png)
