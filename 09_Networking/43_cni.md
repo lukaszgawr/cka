@@ -16,8 +16,8 @@ Available plugins:
 * IPVLAN
 * MACVLAN
 * WINDOWS
-* DHCP
-* host-local
+* DHCP - built-in plugin
+* host-local - built-in plugin
 * Weave
 * Flannel
 * Cilium
