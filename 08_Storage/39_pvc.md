@@ -16,9 +16,29 @@ If there are multiple possible matches (PVs) for a single claim you can use sele
 
 ![pvc](../images/39_pvc.png)
 
+## Using PVCs in PODs
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+    - name: myfrontend
+      image: nginx
+      volumeMounts:
+      - mountPath: "/var/www/html"
+        name: mypd
+  volumes:
+    - name: mypd
+      persistentVolumeClaim:
+        claimName: myclaim
+```
+
 ## Deleting PVCs
 
-What happens when you delete PVC? It depends on _persistentVolumeReclaimPolicy_ which can be:
+What happens when you delete PVC? It depends on _persistentVolumeReclaimPolicy_ set in PV which can be:
 * Retain - PV will remain until it's manually deleted, it will not be able to be re-used by other PVCs
 * Delete
 * Recycle - In this case, the data in the data volume will be scrubbed before making it available to other claims.
