@@ -49,3 +49,9 @@ kubectl set selector svc svc-name 'key=value'
 ```
 kubectl set image deploy deploy-name image-name
 ```
+
+## Annotating imperatively
+```
+kubectl anotate deploy web-app kubernetes.io/change-cause="Changed to nginx:1.23.1" [--overwrite=true]
+```
+overwrite means to overwrite if annotation already exists
