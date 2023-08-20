@@ -27,5 +27,5 @@ dla type:ClusterIP nie ma tylko nodePort a reszta tak samo
 
 ## Exposing resources
 ```console
-kubectl expose rc/pod/rs/deploy name --port 80 --target-port=8080
+kubectl expose rc/pod/rs/deploy name --port 80 --target-port=8080 [--type=ClusterIP] [--name=name-svc]
 ```
