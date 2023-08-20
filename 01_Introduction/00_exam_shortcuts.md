@@ -34,3 +34,8 @@ kubectl replace --force -f /tmp/kubectl-edit-1231.yaml
 ```kubectl run busybox --image=busybox --dry-run=client -o yaml -- sleep 1000 > busybox.yaml```
 
 Then you can apply and do e.g.: ```kubectl exec busybox -- ip route```
+
+## Set namespace
+```
+kubectl config set-context --current --namespace=dev
+```
