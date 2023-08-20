@@ -7,7 +7,7 @@ kubectl rollout status deployment/myapp
 
 To view the history of deployments&rollouts:
 ```
-kubectl rollout history deployment/myapp
+kubectl rollout history deployment/myapp [--revision=2]
 ```
 
 ## Deployment strategies
@@ -21,5 +21,5 @@ kubectl describe deployment myapp|grep StrategyType
 
 ## Rollback
 ```
-kubectl rollout undo deployment/myapp
+kubectl rollout undo deployment/myapp [--to-revision=2]
 ```
