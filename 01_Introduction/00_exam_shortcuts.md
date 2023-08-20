@@ -39,3 +39,13 @@ Then you can apply and do e.g.: ```kubectl exec busybox -- ip route```
 ```
 kubectl config set-context --current --namespace=dev
 ```
+
+## Setting selector imperatively on a service
+```
+kubectl set selector svc svc-name 'key=value'
+```
+
+## Setting image imperatively
+```
+kubectl set image deploy deploy-name image-name
+```
