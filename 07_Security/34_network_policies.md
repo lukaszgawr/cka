@@ -77,3 +77,5 @@ spec:
     - port: 53
       protocol: TCP
 ```
+
+Good practice when you suspect network policies is preventing the connection is doing allow-all netpol rule.
