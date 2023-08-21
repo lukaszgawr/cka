@@ -1,6 +1,6 @@
 # Network policies
 
-By default k8s is allow-all. When you install cni that supports netpols it's also at first moment allow all. BUT the moment you apply first netpol on a set of pods, it becomes deny-all allowing only what's in the policy.
+By default k8s networking is allow-all. When you install cni that supports netpols it's also at first moment allow all. BUT the moment you apply first netpol on a set of pods, it becomes deny-all allowing only what's in the policy.
 
 ```yaml
 apiVersion: networking.k8s.io/v1
