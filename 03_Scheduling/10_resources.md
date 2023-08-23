@@ -90,4 +90,6 @@ spec:
 max & default refers to limit  
 defaultRequest & min refers to request.
 
+[Good YT video](https://youtu.be/xjpHggHKm78)
+
 To restrict total max resources per namespace you can use ResourceQuotas. Look [here](../02_Core_Concepts/06_namespaces_quotas.md)
