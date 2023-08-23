@@ -27,7 +27,7 @@ spec:
 ```
 
 ```console
-kubectl create deployment --image=nginx [dry-run=client] [--replicas=6] myapp-deployment [-o yaml]
+kubectl create deployment --image=nginx [--dry-run=client] [--replicas=6] myapp-deployment [-o yaml]
 ```
 
 To set image imperatively:
