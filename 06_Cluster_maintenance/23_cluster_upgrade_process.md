@@ -11,8 +11,7 @@ K8s can be installed "The hard way" - using systemd services (e.g. /etc/systemd/
 3. ```kubeadm upgrade apply v1.12.0```
 4. Upgrade kubelet (if kubelet is present on master node): ```apt-get upgrade -y kubelet=1.12.0-00```
 5. ```systemctl restart kubelet```  
-
-Uncordon.
+6. Uncordon master node, and if needed remove taint
 
 
 ## Upgrading worker nodes
