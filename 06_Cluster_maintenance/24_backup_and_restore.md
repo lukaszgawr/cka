@@ -22,7 +22,7 @@ to check the status:
 #### Restore from snapshot
 
 1. Stop kube-apiserver:
-```service kube-apiserver stop``` - not necesarily
+```service kube-apiserver stop``` or systemctl
 2. Restore snapshot:
 ```ETCDCTL_API=3 etcdctl snapshot restore snapshot.db --data-dir /var/lib/etcd-from-backup ```
 3. Change --data-dir in etcd service to --data-dir=/var/lib/etcd-from-backup OR change the volume's hostPath. If etcd is deployed as service then change data-dir in e.g. /etc/systemd/system/etcd.service
