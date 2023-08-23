@@ -5,7 +5,7 @@ Only one major version at a time. First masters, then workers.
 K8s can be installed "The hard way" - using systemd services (e.g. /etc/systemd/system/kube-apiserver.service) or kubeadm way, where kube-apiserver is deployed as static pod in /etc/kubernetes/manifests/kube-apiserver.yaml. Same for other controlplane services.
 
 ## Upgrading master nodes
-Drain if it has kubelet
+0. Drain if it has kubelet
 1. ```apt-get upgrade -y kubeadm=1.12.0-00```
 2. ```kubeadm upgrade plan```
 3. ```kubeadm upgrade apply v1.12.0```
