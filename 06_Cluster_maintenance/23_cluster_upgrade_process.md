@@ -19,10 +19,10 @@ Uncordon.
 Upgrade one at the time.
 1. Drain the node: ```kubectl drain node-1 --ignore-daemonsets```, ssh to node
 2. ```apt-get upgrade -y kubeadm=1.12.0-00```
-3. ```apt-get upgrade -y kubelet=1.12.0-00```
-4. ```kubeadm upgrade node ```
+3. ```kubeadm upgrade node ```
+4. ```apt-get upgrade -y kubelet=1.12.0-00```
 5. ```systemctl restart kubelet```
-6. ```kubectl uncordon node-1```
+6. ssh to controlplane node, and do: ```kubectl uncordon node-1```
 
 ## Ubuntu tricks
 ### Madison to check available versions of a package
