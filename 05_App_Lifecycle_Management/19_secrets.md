@@ -38,7 +38,7 @@ spec:
     image: nginx
     envFrom:
       - secretRef:
-          name: myconfigmap
+          name: mysecret
 ```
 
 You can also inject single vars from secret:
