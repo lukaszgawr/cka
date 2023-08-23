@@ -90,6 +90,29 @@ spec:
 max & default refers to limit  
 defaultRequest & min refers to request.
 
+CPU & Memory can be combined:
+```yaml
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: resource-constraint
+spec:
+  limits:
+  - default:
+      cpu: 600m
+      memory: 1Gi
+    defaultRequest:
+      cpu: 100m
+      memory: 1Gi
+    max:
+      cpu: 1000m
+      memory: 1Gi
+    min:
+      cpu: 10m
+      memory: 500Mi
+    type: Container
+```
+
 [Good YT video](https://youtu.be/xjpHggHKm78)
 
 To restrict total max resources per namespace you can use ResourceQuotas. Look [here](../02_Core_Concepts/06_namespaces_quotas.md)
