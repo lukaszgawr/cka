@@ -21,6 +21,12 @@ rules:
 ```
 _resourceNames_ is optional.
 
+## Imperatively
+```
+kubectl create role foo --verb=get,list,watch --resource=pods
+kubectl create clusterrole foo --verb=get,list,watch --resource=replicasets.apps
+```
+
 ## RoleBinding
 
 ```yaml
@@ -36,6 +42,16 @@ roleRef:
   kind: Role
   name: developer
   apiGroup: rbac.authorization.k8s.io
+```
+
+Within the namespace "acme", grant the permissions in the "admin" ClusterRole to a user named "bob":
+```
+kubectl create rolebinding bob-admin-binding --clusterrole=admin --user=bob --namespace=acme
+```
+
+Across the entire cluster, grant the permissions in the "cluster-admin" ClusterRole to a user named "root":
+```
+kubectl create clusterrolebinding root-cluster-admin-binding --clusterrole=cluster-admin --user=root
 ```
 
 # Check Access
