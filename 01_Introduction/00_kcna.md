@@ -1,10 +1,5 @@
 # KCNA notes
 
-## Busybox for troubleshooting
-```bash
-kubectl run -it --rm --restart=Never busybox --image=gcr.io/google-containers/busybox sh
-```
-
 ## Probes
 ![Probes](../images/00_probes.png)
 
