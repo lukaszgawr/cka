@@ -31,7 +31,7 @@ kubectl replace --force -f /tmp/kubectl-edit-1231.yaml
 
 ## Running Busybox 
 
-```kubectl run busybox --image=busybox --dry-run=client -o yaml -- sleep 1000 > busybox.yaml```
+```kubectl run busybox --image=busybox -- sleep 7200```
 
 Then you can apply and do e.g.: ```kubectl exec busybox -- ip route```
 
