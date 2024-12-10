@@ -27,8 +27,9 @@ We'll focus on /api and /apis
 
 ## kubectl proxy
 
-```kubectl proxy```  - it will make a proxy to kube-api-server, by default on 8001 port.  
+```kubectl proxy```  - it will make a proxy to kube-api-server, by default on 8001 port.
 After that you can do from your local machine: ``` curl http://localhost:8001 -k ```
+Proxy will use certificates & credentials from kube-config so that you don't have to pass them to curl command.
 
 
 ## Namespaced Resources
