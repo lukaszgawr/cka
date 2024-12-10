@@ -29,11 +29,18 @@ kubectl edit pod mypod
 kubectl replace --force -f /tmp/kubectl-edit-1231.yaml
 ```
 
-## Running Busybox 
+## Running Busybox (no curl there)
 
-```kubectl run busybox --image=busybox --dry-run=client -o yaml -- sleep 1000 > busybox.yaml```
+```kubectl run busybox --image=busybox -- sleep 7200```
 
-Then you can apply and do e.g.: ```kubectl exec busybox -- ip route```
+Then you can apply and do e.g.: ```kubectl exec busybox -- ip route``` or get shell: ``` k exec -it busybox -- /bin/sh```
+
+## Running alpine (and installing curl)
+
+```
+kubectl run alpine --image alpine -- sleep 7200
+kubectl exec alpine -- apk add curl
+```
 
 ## Set namespace
 ```

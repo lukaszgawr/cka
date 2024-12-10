@@ -60,3 +60,23 @@ volumes:
   configMap:
     name: app-config
 ```
+
+But remember about volumeMount!
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+  - name: mypod
+    image: redis
+    volumeMounts:
+    - name: app-config-volume
+      mountPath: "/etc/app-config-volume"
+      readOnly: true
+  volumes:
+  - name: app-config-volume
+    configMap:
+      name: app-config
+```

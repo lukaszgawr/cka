@@ -14,6 +14,7 @@ env:
     valueFrom:
       configMapKeyRef: 
         name: myconfigmap
+        key: APP_COLOR
 ```
 3. Secrets
 ```yaml

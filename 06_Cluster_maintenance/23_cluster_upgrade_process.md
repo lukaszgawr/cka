@@ -5,24 +5,23 @@ Only one major version at a time. First masters, then workers.
 K8s can be installed "The hard way" - using systemd services (e.g. /etc/systemd/system/kube-apiserver.service) or kubeadm way, where kube-apiserver is deployed as static pod in /etc/kubernetes/manifests/kube-apiserver.yaml. Same for other controlplane services.
 
 ## Upgrading master nodes
-Drain if it has kubelet
+0. Drain if it has kubelet
 1. ```apt-get upgrade -y kubeadm=1.12.0-00```
 2. ```kubeadm upgrade plan```
 3. ```kubeadm upgrade apply v1.12.0```
 4. Upgrade kubelet (if kubelet is present on master node): ```apt-get upgrade -y kubelet=1.12.0-00```
 5. ```systemctl restart kubelet```  
-
-Uncordon.
+6. Uncordon master node, and if needed remove taint
 
 
 ## Upgrading worker nodes
 Upgrade one at the time.
 1. Drain the node: ```kubectl drain node-1 --ignore-daemonsets```, ssh to node
 2. ```apt-get upgrade -y kubeadm=1.12.0-00```
-3. ```apt-get upgrade -y kubelet=1.12.0-00```
-4. ```kubeadm upgrade node ```
+3. ```kubeadm upgrade node ```
+4. ```apt-get upgrade -y kubelet=1.12.0-00```
 5. ```systemctl restart kubelet```
-6. ```kubectl uncordon node-1```
+6. ssh to controlplane node, and do: ```kubectl uncordon node-1```
 
 ## Ubuntu tricks
 ### Madison to check available versions of a package

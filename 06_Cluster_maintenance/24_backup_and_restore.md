@@ -22,15 +22,14 @@ to check the status:
 #### Restore from snapshot
 
 1. Stop kube-apiserver:
-```service kube-apiserver stop``` - not necesarily
+```service kube-apiserver stop``` or systemctl (only when k8s is installed _the hard way_)
 2. Restore snapshot:
 ```ETCDCTL_API=3 etcdctl snapshot restore snapshot.db --data-dir /var/lib/etcd-from-backup ```
-3. Change --data-dir in etcd service to --data-dir=/var/lib/etcd-from-backup OR change the volume's hostPath. If etcd is deployed as service then change data-dir in e.g. /etc/systemd/system/etcd.service
-4. ```systemctl daemon-reload```
-5. ```service etcd restart```
-6. ```service kube-apiserver start```
+3. Change --data-dir in etcd service to --data-dir=/var/lib/etcd-from-backup OR change the volume's hostPath. If etcd is deployed as service (_the hard way_) then change data-dir in e.g. /etc/systemd/system/etcd.service and do: ```systemctl daemon-reload```
+4. Restart etcd (either pod if installed by kubeadm, or using: ```service etcd restart``` if installed _the hard way_)
+6. ```service kube-apiserver start``` (only when k8s is installed _the hard way_)
 
-It is recommended to restart controlplane components (e.g. kube-scheduler, kube-controller-manager, kubelet) to ensure that they don't rely on some stale data
+It is recommended to restart controlplane components (e.g. kube-scheduler, kube-controller-manager, kubelet) to ensure that they don't rely on some stale data.
 
 > You might also need to pass to etcdctl the following arguments: 
 > * --endpoints - to point to etcd server, default is 127.0.0.1:2379 so _--endpoints=https://[127.0.0.1]:2379_

@@ -5,6 +5,10 @@ Tainting a node:
 ```console
 kubectl taint nodes node-name key=value:target-effect
 ```
+To untaint:
+```console
+kubectl taint nodes node-name key=value:target-effect-
+```
 
 _target-effect_ - what happens to PODs that DO NOT TOLERATE this taint: 
 * **NoSchedule** - PODs will not be scheduled on the node
